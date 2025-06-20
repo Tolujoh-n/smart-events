@@ -51,7 +51,7 @@ export default function CheckoutButton({ amount }: { amount: number }) {
 
   // Function to get callback URL - replace in production
   function getCallbackURL() {
-    return "https://your-ngrok-url.ngrok-free.app/api/data-validation";
+    return "https://a429-102-91-77-185.ngrok-free.app";
   }
 
   // Handle one-click purchase
