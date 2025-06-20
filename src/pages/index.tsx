@@ -23,83 +23,76 @@ type Campaign = {
   image: StaticImageData;
 };
 
-import aaa from "../assets/caaa.webp";
-import bbb from "../assets/cbbb.webp";
-import ccc from "../assets/cddd.jpg";
-import ddd from "../assets/cccc.webp";
-import eee from "../assets/ceee.webp";
-import fff from "../assets/cfff.jpg";
-import ggg from "../assets/cggg.webp";
-import hhh from "../assets/chhh.webp";
+import aaa from "../assets/smart1.avif";
+import bbb from "../assets/smart3.avif";
+import ccc from "../assets/smart4.avif";
+import ddd from "../assets/smart5.avif";
+import eee from "../assets/smart6.avif";
+import fff from "../assets/smart7.avif";
+import ggg from "../assets/smart8.avif";
+import hhh from "../assets/smart9.avif";
 
 const dummyEvents: Campaign[] = [
   {
     id: "1",
-    name: "REAL Change for Climate and Nature",
-    description:
-      "Things CAN get better. Will you help us call for the REAL change we need for climate, nature.",
+    name: "Fri, Jun 27 • 10:00 PM",
+    description: "We Outside! A Brooklyn Juneteenth, Vol. III",
     amount: 2,
     target: "60",
     image: aaa,
   },
   {
     id: "2",
-    name: "Just a little something",
-    description:
-      "I'm raising money to help give my daughter a treat after a stressful time going up against the FA",
+    name: "Sat, Aug 27 • 11:00 PM",
+    description: "The Great Nosh NYC Picnic Festival",
     amount: 2,
     target: "500",
     image: bbb,
   },
   {
     id: "3",
-    name: "Y Bont needs your help",
-    description:
-      "Y Bont is the only specialist Day Nursery facility for children under 5yrs with Disabilities.",
+    name: "Mon, Jun 6 • 12:00 PM",
+    description: "All Your Friends: The Indie Party | Launch Event",
     amount: 2,
     target: "40",
     image: ccc,
   },
   {
     id: "4",
-    name: "Audrey support fund",
-    description:
-      "We’re raising money to support Audrey during and after imprisonment",
+    name: "Sat, Jun 2 • 2:00 PM",
+    description: "Ashley Poston discusses & signs SOUNDS LIKE LOVE",
     amount: 2,
     target: "70",
     image: ddd,
   },
   {
     id: "5",
-    name: "The Rape Gang Inquiry",
-    description:
-      "What happened, how did it happen, why was it allowed to happen?",
+    name: "Wed, Sep 5 • 10:00 PM",
+    description: "FREESTYLE SUMMER JAM2",
     amount: 2,
     target: "35",
     image: eee,
   },
   {
     id: "6",
-    name: "Keep on Growing",
-    description:
-      "Our aim is to grow food and community in planet positive ways. We desperately need an injection etc",
+    name: "Tue, Oct 26 • 7:00 PM",
+    description: "Loods, Tony y Not",
     amount: 2,
     target: "20",
     image: fff,
   },
   {
     id: "7",
-    name: "The White Mannie Memorial Repairs",
-    description:
-      "The beloved Mannie Statue, a symbol of our coastal community’s resilience, now needs urgent",
+    name: "Fri, Jun 27 • 10:00 PM",
+    description: "Paradise Sunset Rooftop Day Party",
     amount: 2,
     target: "100",
     image: ggg,
   },
   {
     id: "8",
-    name: "Wishaw Cameras",
-    description: "Raise £1,250 to fund 6 cameras and accessories for Wishaw.",
+    name: "Sun, Aug 27 • 6:00 am",
+    description: "Comrades, Almost a Love Story",
     amount: 2,
     target: "120",
     image: hhh,
