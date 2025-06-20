@@ -135,31 +135,42 @@ const Index = () => {
               {dummyEvents.map((m) => (
                 <div
                   key={m.id}
-                  className="bg-gray-800 rounded p-2 cursor-pointer hover:scale-105 transition"
+                  className="bg-gray-800 rounded p-4 cursor-pointer hover:scale-105 transition transform"
                 >
                   <Image
                     src={m.image}
                     alt={m.name}
                     className="rounded w-full h-48 object-cover"
                   />
-                  <h3 className="mt-2 text-l md:text-l font-bold">{m.name}</h3>
-                  <p className="text-sm md:text-base text-gray-300">
+
+                  <h3 className="mt-3 text-lg font-bold text-white">
+                    {m.name}
+                  </h3>
+
+                  <p className="text-sm md:text-base text-gray-300 mt-1">
                     {m.description}
                   </p>
-                  <div className="flex gap-2 mt-4 items-center">
-                    <p className="text-sm">
-                      <b>Open slots.:</b> {m.target}
+
+                  <div className="flex justify-between items-center mt-4 text-sm text-gray-200">
+                    <p>
+                      <span className="font-semibold">Open slots:</span>{" "}
+                      {m.target}
                     </p>
-                    <button
-                      onClick={() => {
-                        setSelectedCampaign(m);
-                        setIsFundOpen(true);
-                      }}
-                      className="flex-1 bg-blue-600 py-2 rounded text-sm font-semibold"
-                    >
-                      Buy Ticket
-                    </button>
+                    <p>
+                      <span className="font-semibold">Fees:</span> {m.amount}{" "}
+                      USDC
+                    </p>
                   </div>
+
+                  <button
+                    onClick={() => {
+                      setSelectedCampaign(m);
+                      setIsFundOpen(true);
+                    }}
+                    className="w-full bg-blue-600 text-white py-2 mt-4 rounded text-sm font-semibold hover:bg-blue-700 transition"
+                  >
+                    Buy Ticket
+                  </button>
                 </div>
               ))}
             </div>
@@ -193,7 +204,7 @@ const Index = () => {
                       <br />
 
                       <p className="text-sm">
-                        <b>Amount:</b> {selectedCampaign?.amount}
+                        <b>Amount:</b> {selectedCampaign?.amount} USDC
                       </p>
                       <br />
                       <div className="text-left">
