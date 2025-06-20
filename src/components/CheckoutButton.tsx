@@ -22,6 +22,22 @@ interface CheckoutResult {
   address?: string;
 }
 
+type WalletSendCallsResponse = {
+  capabilities?: {
+    dataCallback?: {
+      email?: string;
+      physicalAddress?: {
+        address1?: string;
+        address2?: string;
+        city?: string;
+        state?: string;
+        postalCode?: string;
+        countryCode?: string;
+      };
+    };
+  };
+};
+
 export default function CheckoutButton({ amount }: { amount: number }) {
   const [provider, setProvider] = useState<ProviderInterface | undefined>(
     undefined
@@ -74,7 +90,7 @@ export default function CheckoutButton({ amount }: { amount: number }) {
       }
 
       // Request data from wallet using wallet_sendCalls
-      const response: any = await provider?.request({
+      const response = await provider?.request({
         method: "wallet_sendCalls",
         params: [
           {
@@ -105,8 +121,9 @@ export default function CheckoutButton({ amount }: { amount: number }) {
       console.log("response", response);
 
       // Process response
-      if (response?.capabilities?.dataCallback) {
-        const data = response.capabilities.dataCallback;
+      const walletResponse = response as WalletSendCallsResponse;
+      if (walletResponse?.capabilities?.dataCallback) {
+        const data = walletResponse.capabilities.dataCallback;
         const result: CheckoutResult = { success: true };
 
         // Extract email if provided
@@ -131,10 +148,14 @@ export default function CheckoutButton({ amount }: { amount: number }) {
       } else {
         setResult({ success: false, error: "Invalid response" });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
+      let errorMessage = "Transaction failed";
+      if (typeof error === "object" && error !== null && "message" in error) {
+        errorMessage = (error as { message?: string }).message || errorMessage;
+      }
       setResult({
         success: false,
-        error: error.message || "Transaction failed",
+        error: errorMessage,
       });
     } finally {
       setIsLoading(false);
